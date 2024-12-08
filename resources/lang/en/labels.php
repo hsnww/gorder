@@ -1,0 +1,31 @@
+<?php
+return [
+    'site name' => 'Go Order',
+    'site description' => 'The best online shopping experience',
+    'cart' => 'Cart',
+    'product' => 'Product',
+    'view_details' => 'View Details',
+    'Description' => 'Description',
+    'Add to Cart' => 'Add to Cart',
+    'Quantity' => 'Quantity',
+    'Price' => 'Price',
+    'Total' => 'Total',
+    'barcode' => 'Barcode',
+    'Your Cart' => 'Your Cart',
+    'actions' => 'Actions',
+    'Remove' => 'Remove',
+    'Calculate Cheapest' => 'Calculate Cheapest',
+    'Your cart is empty!' => 'Your cart is empty!',
+    'No single provider' => 'No single provider can fulfill your order. You can split your cart among multiple providers.',
+    'Split Cart' => 'Split Cart',
+    'Back to Cart' => 'Back to Cart',
+    'Cart Fulfillment' => 'Cart Fulfillment',
+    'Price Comparison for' => 'Price Comparison for',
+    'Available Quantity' => 'Available Quantity',
+    'No providers found for this product.' => 'No providers found for this product.',
+    'Single Provider' => 'Single Provider',
+    'Change Provider' => 'Change Provider',
+    'Select Provider' => 'Select Provider',
+
+];
+
