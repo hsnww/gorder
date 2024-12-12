@@ -26,6 +26,18 @@ return [
     'Single Provider' => 'Single Provider',
     'Change Provider' => 'Change Provider',
     'Select Provider' => 'Select Provider',
+    'Update' => 'Update Quantity',
+    'No provider carts yet.' => 'No provider carts yet.',
+    'Initial Cart' => 'Initial Cart',
+    'View All Carts' => 'View All Carts',
+    'Provider Cart' => 'Provider Cart',
+    'Provider Carts' => 'Provider Carts',
+    'items' => 'items',
+    'All Carts' => 'All Carts',
+    'Back to Provider' => 'Back to Provider',
+    'Save Suggested Carts' => 'Save Suggested Carts',
+    'Save Suggested Cart' => 'Save Suggested Cart',
+    'Your initial cart is empty!' => 'Your initial cart is empty!',
 
 ];
 

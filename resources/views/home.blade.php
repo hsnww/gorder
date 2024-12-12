@@ -15,19 +15,30 @@
                                     <!-- Product name -->
                                     <h5 class="fw-bolder">{{ app()->getLocale() === 'ar' ? $product->name_ar : $product->name_en }}</h5>
                                     <!-- Product price -->
-
+                                    <p class="text-muted">${{ number_format($product->price, 2) }}</p>
                                 </div>
                             </div>
                             <!-- Product actions -->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
-                                    <a href="{{ route('products.show', $product->id) }}" class="btn btn-outline-dark">{{ __('labels.view_details') }}</a>
-
-
+                                    <!-- View Details Button -->
+                                    <a href="{{ route('products.show', $product->id) }}" class="btn btn-outline-dark">
+                                        {{ __('labels.view_details') }}
+                                    </a>
+                                    <!-- Add to Cart Button -->
+                                    <form action="{{ route('cart.add') }}" method="POST" class="d-inline">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <button type="submit" class="btn btn-outline-dark mt-1">
+                                            {{ __('labels.Add to Cart') }}
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 @endforeach
                 {{ $products->links()}}
             </div>

@@ -9,16 +9,19 @@
         <h2>{{ __('provider.products_provided') }}</h2>
         <div class="row">
             @foreach ($products as $productWarehouse)
+                @php
+                    $product = $productWarehouse->product;
+                @endphp
                 <div class="col-md-3 mb-4">
                     <div class="card h-100">
                         <!-- صورة المنتج -->
-                        <img src="{{ asset('storage/images/' . $productWarehouse->product->photo) }}" class="card-img-top" alt="{{ app()->getLocale() === 'ar' ? $productWarehouse->product->name_ar : $productWarehouse->product->name_en }}">
+                        <img src="{{ asset('storage/images/' . $product->photo) }}" class="card-img-top" alt="{{ app()->getLocale() === 'ar' ? $product->name_ar : $product->name_en }}">
 
                         <div class="card-body">
                             <!-- اسم المنتج -->
-                            <h5 class="card-title">{{ app()->getLocale() === 'ar' ? $productWarehouse->product->name_ar : $productWarehouse->product->name_en }}</h5>
+                            <h5 class="card-title">{{ app()->getLocale() === 'ar' ? $product->name_ar : $product->name_en }}</h5>
                             <p class="card-text">
-                                <strong>{{ __('provider.category') }}:</strong> {{ app()->getLocale() === 'ar' ? $productWarehouse->product->category->name_ar : $productWarehouse->product->category->name_en }}<br>
+                                <strong>{{ __('provider.category') }}:</strong> {{ app()->getLocale() === 'ar' ? $product->category->name_ar : $product->category->name_en }}<br>
                                 <strong>{{ __('provider.price') }}:</strong> ${{ number_format($productWarehouse->price, 2) }}<br>
                                 <strong>{{ __('provider.available') }}:</strong> {{ $productWarehouse->quantity }}
                             </p>
@@ -26,12 +29,12 @@
 
                         <div class="card-footer">
                             <!-- زر الإضافة إلى السلة -->
-                            <form action="{{ route('cart.add') }}" method="POST">
+                            <form action="{{ route('provider.cart.add') }}" method="POST">
                                 @csrf
-                                <input type="hidden" name="product_id" value="{{ $productWarehouse->product->id }}">
-                                <input type="hidden" name="provider_id" value="{{ $productWarehouse->provider_id }}">
-                                <div class="input-group mb-2">
-                                    <input type="number" name="quantity" class="form-control" min="1" max="{{ $productWarehouse->quantity }}" value="1" required>
+                                <input type="hidden" name="provider_id" value="{{ $provider->id }}">
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <div class="input-group">
+                                    <input type="number" name="quantity" value="1" min="1" class="form-control">
                                     <button type="submit" class="btn btn-primary">{{ __('provider.add_to_cart') }}</button>
                                 </div>
                             </form>

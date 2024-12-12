@@ -324,6 +324,26 @@
                     </div>
                     <div class="nav-item">
                         <a
+                            class="nav-link"
+                            href="#"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#Countries"
+                            rol="button"
+                            aria-expanded="false"
+                            aria-controls="Countries"
+                        >
+                            <span class="material-symbols-outlined me-3">travel_explore</span> Countries
+                        </a>
+                        <div class="collapse " id="Countries">
+                            <nav class="nav nav-pills">
+                                <a class="nav-link " href="{{ route('admin.countries.index') }}">Countries</a>
+                                <a class="nav-link " href="{{ route('admin.regions.index') }}">Regions</a>
+                                <a class="nav-link " href="{{ route('admin.cities.index') }}">Cities</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a
                             class="nav-link "
                             href="#"
                             data-bs-toggle="collapse"
